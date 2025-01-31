@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - '42070:42070'
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/aginTV
+    restart: always
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - '8894:3000'
+    restart: always
