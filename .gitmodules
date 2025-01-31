@@ -1,0 +1,6 @@
+[submodule "api"]
+	path = api
+	url = ssh://git@github.com/Piernikkk/AginTvApi.git
+[submodule "web"]
+	path = web
+	url = ssh://git@github.com/Piernikkk/agin_tv_web.git
