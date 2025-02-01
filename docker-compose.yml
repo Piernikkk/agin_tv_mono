@@ -10,7 +10,7 @@ services:
     volumes:
       - ./uploads:/app/uploads
     environment:
-      - DATABASE_URI=mongodb://mongodb:27017/aginTV
+      - DATABASE_URI=mongodb://agin:agin@mongodb:27017/aginTV
       - PORT=42070
     restart: always
   web:
@@ -26,8 +26,8 @@ services:
       - type: bind
         source: ./db
         target: /data/db
-    # environment:
-    #   - MONGODB_INITDB_ROOT_USERNAME=agin
-    #   - MONGODB_INITDB_ROOT_PASSWORD=agin
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=agin
+      - MONGODB_INITDB_ROOT_PASSWORD=agin
     restart: always
     user: 1000:1000
