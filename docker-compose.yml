@@ -26,8 +26,8 @@ services:
       - type: bind
         source: ./db
         target: /data/db
-    environment:
-      - MONGODB_INITDB_ROOT_USERNAME=agin
-      - MONGODB_INITDB_ROOT_PASSWORD=agin
+    # environment:
+    #   - MONGODB_INITDB_ROOT_USERNAME=agin
+    #   - MONGODB_INITDB_ROOT_PASSWORD=agin
     restart: always
     user: 1000:1000
