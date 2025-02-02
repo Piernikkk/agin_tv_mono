@@ -21,13 +21,13 @@ services:
       - "8894:3000"
     restart: always
   mongodb:
-    ports:
-      - "27019:27017"
     image: mongodb/mongodb-community-server:6.0-ubi8
     volumes:
       - type: bind
         source: ./db
         target: /data/db
+    ports:
+      - "27019:27017"
     # environment:
     #   - MONGODB_INITDB_ROOT_USERNAME=agin
     #   - MONGODB_INITDB_ROOT_PASSWORD=agin
