@@ -27,7 +27,7 @@ services:
         source: ./db
         target: /data/db
     ports:
-      - "27019:27017"
+      - ":27017"
     # environment:
     #   - MONGODB_INITDB_ROOT_USERNAME=agin
     #   - MONGODB_INITDB_ROOT_PASSWORD=agin
