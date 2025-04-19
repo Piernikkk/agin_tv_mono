@@ -3,8 +3,8 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile
-    # ports:
-    #   - "42070:42070"
+    ports:
+      - "42070:42070"
     depends_on:
       - mongodb
     volumes:
@@ -25,8 +25,8 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    # ports:
-    #   - "8894:3000"
+    ports:
+      - "8894:3000"
     restart: always
     labels:
       traefik.enable: true
@@ -44,9 +44,9 @@ services:
         target: /data/db
     ports:
       - ":27017"
-    environment:
-      - MONGODB_INITDB_ROOT_USERNAME=agin
-      - MONGODB_INITDB_ROOT_PASSWORD=agin
+    # environment:
+    #   - MONGODB_INITDB_ROOT_USERNAME=agin
+    #   - MONGODB_INITDB_ROOT_PASSWORD=agin
     restart: always
     user: 1000:1000
     networks:
